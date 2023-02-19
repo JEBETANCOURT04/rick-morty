@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchInputs from './SearchInputs'
 
 function InitialPage(){
-
-    const [search, setSearch] = useState(null)
-
-    const handleSearch = (data) => {
-        setSearch(data)
-    }
-
-    console.log(search)
 
     return(
         <div className="isolate bg-white">
@@ -30,7 +22,7 @@ function InitialPage(){
                 <div className="text-center">
                 <img className="h-max w-auto" src="https://1000logos.net/wp-content/uploads/2022/03/Rick-and-Morty.png" alt="" />
                 <p className="mt-6 text-lg leading-8 text-gray-600">Consult the characters of Rick and Morty and view their details.</p>                
-                <SearchInputs handleSearch={handleSearch}/>                
+                <SearchInputs/>                
                 </div>
             </div>            
             </div>

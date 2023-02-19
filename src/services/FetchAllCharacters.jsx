@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 const FetchAllCharacters = () => {
-  const [character, setCharacter] = useState([]);
-
-  const fetchData = async () => {
-    const response = await fetch('https://rickandmortyapi.com/api/character')
-    const data = await response.json()
-
-    setCharacter(data.results)
-  };
+  const [allCharacter, setAllCharacter] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    console.log("Fetching all characters");
+    fetch("https://rickandmortyapi.com/api/character")
+      .then((response) => response.json())
+      .then((data) => setAllCharacter(data.results));
+    return () => {};
   }, []);
 
   return (
     <div className="w-full grid gap-4 grid-cols-3 place-items-center px-4">
-      {character.map(character => (
-        <div key={character.id} className="w-64 flex justify-center flex-col items-center border-solid border-4 border-grey px-4 py-4">
+      {allCharacter.map((character) => (
+        <div
+          key={character.id}
+          className="w-64 flex justify-center flex-col items-center border-solid border-4 border-grey px-4 py-4"
+        >
           {character.image ? (
             <img src={character.image} alt="" />
           ) : (
