@@ -12,7 +12,7 @@ const FetchAllCharacters = () => {
   }, []);
 
   return (
-    <div className="w-full grid gap-4 grid-cols-3 place-items-center px-4">
+    <div className="container max-w-full flex place-items-center px-4 flex-wrap justify-evenly gap-y-2">
       {allCharacter.map((character) => (
         <div
           key={character.id}

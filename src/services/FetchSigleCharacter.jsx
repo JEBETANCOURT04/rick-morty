@@ -47,7 +47,7 @@ const FetchSigleCharacter = ({ keyword }) => {
 
   return (
     <>
-      <div className="w-full grid gap-4 grid-cols-3 place-items-center px-4">
+      <div className="container max-w-full flex place-items-center px-4 flex-wrap justify-evenly gap-y-2">
         {character.isLoading && (
           <div role="status">
             <svg
@@ -73,7 +73,7 @@ const FetchSigleCharacter = ({ keyword }) => {
         {character.data.length > 0 &&
           character.data.map((character) => (
             <Link key={character.id} to={""}>
-              <div className="w-64 flex justify-center flex-col items-center border-solid border-4 border-grey px-4 py-4">
+              <div className="w-64 flex justify-center flex-col items-center border-solid border-4 border-grey px-4 py-4 relative">
                 {character.image ? (
                   <img src={character.image} alt="" />
                 ) : (
