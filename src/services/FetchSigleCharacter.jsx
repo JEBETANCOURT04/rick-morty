@@ -40,7 +40,7 @@ const FetchSigleCharacter = ({ keyword }) => {
           ...character,
           isLoading: false,
           data: [],
-          error: error,
+          error: "Entró al catch",
         })
       );
   }, [keyword]);
@@ -72,7 +72,7 @@ const FetchSigleCharacter = ({ keyword }) => {
 
         {character.data.length > 0 &&
           character.data.map((character) => (
-            <Link key={character.id} to={""}>
+            <Link key={character.id} to={`/character/${character.id}`}>
               <div className="w-64 flex justify-center flex-col items-center border-solid border-4 border-grey px-4 py-4 relative">
                 {character.image ? (
                   <img src={character.image} alt="" />
