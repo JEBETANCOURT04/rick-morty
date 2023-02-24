@@ -4,7 +4,8 @@ import FetchAllCharacters from "../services/FetchAllCharacters";
 import FetchSigleCharacter from "../services/FetchSigleCharacter";
 import SearchInputs from "./SearchInputs";
 
-const FetchResults = () => {
+const FetchResults = () => {  
+
   // get the search parameters of the current url
   const [searchParams] = useSearchParams();
   const [keywordSearch, setKeywordSearch] = useState("");
